@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FastFine"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <!-- Search Bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/searchLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewHeader"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Vehicle Plate Number"
+            android:textColorHint="@color/black"
+            android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/navigationBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/searchLayout"
+        android:layout_marginTop="32dp"
+        android:orientation="horizontal">
+
+        <!-- Profile Option -->
+        <TextView
+            android:id="@+id/textViewProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Profile"
+            android:textAlignment="center" />
+
+        <!-- My Fines Option -->
+        <TextView
+            android:id="@+id/textViewMyFines"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="My Fines"
+            android:textAlignment="center" />
+
+        <!-- Calculate Fines Option -->
+        <TextView
+            android:id="@+id/textViewCalculateFines"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Calculate Fines"
+            android:textAlignment="center" />
+
+        <!-- Map View Option -->
+        <TextView
+            android:id="@+id/textViewMapView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Map View"
+            android:textAlignment="center" />
+    </LinearLayout>
+
+    <!-- General Description -->
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/navigationBar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Welcome to FastFine! Your one-stop solution for paying fines quickly and easily. Use the search bar below to find fines by vehicle plate number."
+        android:textColor="@color/black"
+        android:textAlignment="center" />
+
+</RelativeLayout>

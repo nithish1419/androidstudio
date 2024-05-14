@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- Header -->
+    <TextView
+        android:id="@+id/textViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fine Calculator"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp" />
+
+    <!-- Input Fields -->
+    <EditText
+        android:id="@+id/editTextSpeedLimit"
+        android:layout_width="395dp"
+        android:layout_height="78dp"
+        android:layout_below="@id/textViewHeader"
+        android:layout_marginTop="16dp"
+        android:hint="Speed Limit (km/h)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/editTextActualSpeed"
+        android:layout_width="386dp"
+        android:layout_height="98dp"
+        android:layout_below="@id/editTextSpeedLimit"
+        android:layout_marginTop="16dp"
+        android:hint="Actual Speed (km/h)"
+        android:inputType="number" />
+
+    <!-- Calculate Button -->
+    <Button
+        android:id="@+id/buttonCalculate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:layout_below="@id/editTextActualSpeed"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
+
+    <!-- Result -->
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonCalculate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text=""
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>
