@@ -35,7 +35,6 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                finish(); // Close the current activity (register) before opening login activity
             }
         });
 
@@ -89,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity {
                 // Registration successful
                 Toast.makeText(this, "Registration successful. Login now", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-                finish();
+
             } else {
                 // Registration failed
                 Toast.makeText(this, "Registration failed. Please try again", Toast.LENGTH_SHORT).show();
