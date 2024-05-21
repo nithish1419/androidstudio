@@ -5,7 +5,7 @@
     android:background="@color/yellow"
     android:padding="16dp">
 
-    <!-- Header -->
+
     <TextView
         android:id="@+id/textViewHeader"
         android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
 
         <!-- Profile Option -->
         <TextView
-            android:id="@+id/textViewProfile"
+            android:id="@+id/textViewPayment"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

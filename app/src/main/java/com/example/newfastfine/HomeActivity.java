@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomeActivity extends AppCompatActivity {
 
     private EditText editTextSearch;
-    private TextView textViewProfile, textViewMyFines, textViewCalculateFines, textViewMapView;
+    private TextView textViewPayment, textViewMyFines, textViewCalculateFines, textViewMapView;
     private TextSwitcher textViewDescription;
 
     // Array of description texts
@@ -36,18 +36,19 @@ public class HomeActivity extends AppCompatActivity {
 
         // Initialize views
         editTextSearch = findViewById(R.id.editTextSearch);
-        textViewProfile = findViewById(R.id.textViewProfile);
+        textViewPayment = findViewById(R.id.textViewPayment);
         textViewMyFines = findViewById(R.id.textViewMyFines);
         textViewCalculateFines = findViewById(R.id.textViewCalculateFines);
         textViewMapView = findViewById(R.id.textViewMapView);
         textViewDescription = findViewById(R.id.textViewDescription);
 
         // Set click listeners for navigation options
-        textViewProfile.setOnClickListener(new View.OnClickListener() {
+        textViewPayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Handle profile option click
-                Toast.makeText(HomeActivity.this, "Opening Profile...", Toast.LENGTH_SHORT).show();
+                // Handle payment option click
+                Toast.makeText(HomeActivity.this, "Opening Payment Page...", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, PaymentActivity.class));
             }
         });
 
@@ -55,7 +56,8 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Handle my fines option click
-                Toast.makeText(HomeActivity.this, "My Fines...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomeActivity.this, "Opening My Fines...", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(HomeActivity.this, MyFinesActivity.class));
             }
         });
 
@@ -65,7 +67,6 @@ public class HomeActivity extends AppCompatActivity {
                 // Handle calculate fines option click
                 Toast.makeText(HomeActivity.this, "Opening Fine Calculator", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(HomeActivity.this, CalculatorActivity.class));
-
             }
         });
 

@@ -6,18 +6,29 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.AuthResult;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText fullNameEditText, emailEditText, passwordEditText, confirmPasswordEditText, mobileNumberEditText;
     private TextView loginLinkTextView;
-    private DatabaseHelper databaseHelper;
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        // Initialize Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
 
         // Initialize views
         fullNameEditText = findViewById(R.id.fullName);
@@ -26,9 +37,6 @@ public class RegisterActivity extends AppCompatActivity {
         confirmPasswordEditText = findViewById(R.id.confirmPassword);
         mobileNumberEditText = findViewById(R.id.mobileNumber);
         loginLinkTextView = findViewById(R.id.loginLink);
-
-        // Initialize DatabaseHelper
-        databaseHelper = new DatabaseHelper(this);
 
         // Set click listener for the login link
         loginLinkTextView.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +50,6 @@ public class RegisterActivity extends AppCompatActivity {
         findViewById(R.id.registerBtn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Perform registration logic here
                 registerUser();
             }
         });
@@ -82,17 +89,22 @@ public class RegisterActivity extends AppCompatActivity {
             // Display error message if passwords do not match
             Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
         } else {
-            // Registration successful, perform further actions here (e.g., save to database)
-            long result = databaseHelper.insertUser(fullName, email, password, mobileNumber);
-            if (result != -1) {
-                // Registration successful
-                Toast.makeText(this, "Registration successful. Login now", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
-
-            } else {
-                // Registration failed
-                Toast.makeText(this, "Registration failed. Please try again", Toast.LENGTH_SHORT).show();
-            }
+            // Registration successful, perform further actions here (e.g., save to Firebase)
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Registration successful
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                Toast.makeText(RegisterActivity.this, "Registration successful. Login now", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                            } else {
+                                // If registration fails, display a message to the user.
+                                Toast.makeText(RegisterActivity.this, "Registration failed. Please try again", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
         }
     }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "224521144210",
+    "project_id": "newfastfine",
+    "storage_bucket": "newfastfine.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224521144210:android:9fe2e90250ce8ba460a34b",
+        "android_client_info": {
+          "package_name": "com.example.newfastfine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0IgKnkqVwW1HZetHoYX6SX3LA0hrD14I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
