@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Fast Fine</string>
+    <string name="profile_image">profile_image</string>
 </resources>

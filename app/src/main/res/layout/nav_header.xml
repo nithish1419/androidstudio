@@ -7,15 +7,17 @@
     android:padding="16dp">
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:src="@drawable/profile"
-        android:layout_gravity="center" />
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        android:contentDescription="@string/profile_image" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="John Doe"
+        android:text="Name"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:layout_marginTop="8dp"
@@ -24,7 +26,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="john.doe@example.com"
+        android:text="example@example.com"
         android:textColor="@android:color/white"
         android:textSize="14sp"
         android:layout_marginTop="4dp"
