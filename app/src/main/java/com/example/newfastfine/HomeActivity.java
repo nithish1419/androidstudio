@@ -5,17 +5,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.EditText;
+import android.widget.SearchView;
+import android.widget.TextSwitcher;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.TextSwitcher;
 import android.widget.ViewSwitcher;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
-    private EditText editTextSearch;
+    private SearchView searchView;
     private TextView textViewPayment, textViewMyFines, textViewCalculateFines, textViewMapView;
     private TextSwitcher textViewDescription;
 
@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         // Initialize views
-        editTextSearch = findViewById(R.id.editTextSearch);
+        searchView = findViewById(R.id.searchView);
         textViewPayment = findViewById(R.id.textViewPayment);
         textViewMyFines = findViewById(R.id.textViewMyFines);
         textViewCalculateFines = findViewById(R.id.textViewCalculateFines);

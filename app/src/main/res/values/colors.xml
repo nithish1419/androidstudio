@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
     <color name="red">#FFFF0000</color>
     <color name="green">#FF00FF00</color>
     <color name="blue">#FF0000FF</color>
@@ -12,7 +11,7 @@
     <color name="navy">#FF000080</color>
     <color name="maroon">#FF800000</color>
     <color name="olive">#FF808000</color>
-    <color name="purple">#FF800080</color>
+    <color name="purple">#851085</color>
     <color name="teal">#FF008080</color>
     <color name="silver">#FFC0C0C0</color>
     <color name="gainsboro">#FFDCDCDC</color>
@@ -27,4 +26,9 @@
     <color name="lightcyan">#FFE0FFFF</color>
     <color name="lightmagenta">#FFF5F5DC</color>
     <color name="violet">#905AF1</color>
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="darker_gray">#A9A9A9</color>
 </resources>

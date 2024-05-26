@@ -15,6 +15,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
+// Import statements
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText emailEditText, passwordEditText;
@@ -37,6 +39,34 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUser();
+            }
+        });
+
+        // Set click listener for the "Forgot Password" TextView
+        findViewById(R.id.forgotpassword).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = emailEditText.getText().toString().trim();
+
+                if (email.isEmpty()) {
+                    // Display error message if email field is empty
+                    Toast.makeText(MainActivity.this, "Please enter your email address", Toast.LENGTH_SHORT).show();
+                } else {
+                    // Send password reset email
+                    mAuth.sendPasswordResetEmail(email)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        // Password reset email sent successfully
+                                        Toast.makeText(MainActivity.this, "Password reset email sent.", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        // If the reset email fails to send, display a message to the user.
+                                        Toast.makeText(MainActivity.this, "Failed to send password reset email.", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
+                }
             }
         });
 
@@ -85,3 +115,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
