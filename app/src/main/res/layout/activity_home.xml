@@ -13,25 +13,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- TextViewHeader -->
-        <TextView
-            android:id="@+id/textViewHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FastFine"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="32dp"
-            android:padding="8dp" />
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
 
         <!-- Search Bar -->
         <SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textViewHeader"
+            android:layout_below="@id/toolbar"
             android:layout_marginTop="32dp"
             android:queryHint="Enter Vehicle Plate Number"
             android:background="@drawable/rounded_corner_white"
